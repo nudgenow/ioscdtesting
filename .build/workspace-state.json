@@ -1,0 +1,26 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "ioscdtesting",
+          "kind" : "root",
+          "location" : "/Users/shubhasaimohapatra/Documents/Repos/ioscdtesting",
+          "name" : "ioscdtesting"
+        },
+        "path" : "/Users/shubhasaimohapatra/Documents/Repos/ioscdtesting/.build/artifacts/ioscdtesting/nudgecore/nudgecore.xcframework",
+        "source" : {
+          "checksum" : "7c1f94417f542b95fd52cdb501482709735efd80d4246e3842a5ccbf76e2dc26",
+          "type" : "remote",
+          "url" : "https://github.com/nudgenow/libraries/raw/main/iosv2/nudgecore.xcframework.zip"
+        },
+        "targetName" : "nudgecore"
+      }
+    ],
+    "dependencies" : [
+
+    ]
+  },
+  "version" : 6
+}

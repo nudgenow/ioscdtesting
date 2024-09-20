@@ -9,13 +9,13 @@
           "location" : "/Users/shubhasaimohapatra/Documents/Repos/ioscdtesting",
           "name" : "ioscdtesting"
         },
-        "path" : "/Users/shubhasaimohapatra/Documents/Repos/ioscdtesting/.build/artifacts/ioscdtesting/nudgecore/nudgecore.xcframework",
+        "path" : "/Users/shubhasaimohapatra/Documents/Repos/ioscdtesting/.build/artifacts/ioscdtesting/nudgecore_v2/nudgecore_v2.xcframework",
         "source" : {
-          "checksum" : "7c1f94417f542b95fd52cdb501482709735efd80d4246e3842a5ccbf76e2dc26",
+          "checksum" : "dd8d006c07599ad432e86556fc967ce25904b9b46fa992b27465d2efa201e5bb",
           "type" : "remote",
-          "url" : "https://github.com/nudgenow/libraries/raw/main/iosv2/nudgecore.xcframework.zip"
+          "url" : "https://github.com/nudgenow/ioscdtesting/raw/refs/heads/prod_main/nudgecore_v2.xcframework.zip"
         },
-        "targetName" : "nudgecore"
+        "targetName" : "nudgecore_v2"
       }
     ],
     "dependencies" : [

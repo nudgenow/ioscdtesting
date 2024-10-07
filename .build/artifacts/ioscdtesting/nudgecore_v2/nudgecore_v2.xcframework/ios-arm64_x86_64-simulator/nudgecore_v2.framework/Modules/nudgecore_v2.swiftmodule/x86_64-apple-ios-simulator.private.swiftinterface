@@ -1,0 +1,171 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name nudgecore_v2
+import SystemConfiguration.CaptiveNetwork
+import CoreTelephony
+import Foundation
+import JavaScriptCore
+import SQLite3
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import nudgecore_v2
+@_hasMissingDesignatedInitializers public class NudgeScallingManager {
+  public static func getDetaultScale()
+  public static func getCustomScale(refHeight: Swift.Int, refWidth: Swift.Int)
+  @objc deinit
+}
+public protocol CallbackInterface {
+  func onTrackDataReceived(trackData: Any?, event: Swift.String, rewards: Any?, taskDetails: Any?, frontEndTrace: Swift.String?, eventProperties: [Swift.String : Any]?, destinationRoot: Swift.String?)
+}
+@_hasMissingDesignatedInitializers public class Nudge {
+  public static var trackCallback: (any nudgecore_v2.CallbackInterface)?
+  public static func shared(apiKey: Swift.String, debugMode: Swift.Bool) -> nudgecore_v2.Nudge
+  public static func getInstance() -> nudgecore_v2.Nudge
+  public func userIdentifier(externalId: Swift.String, name: Swift.String? = nil, email: Swift.String? = nil, phoneNumber: Swift.String? = nil, properties: [Swift.String : Any]? = nil)
+  public func track(event: Swift.String, properties: [Swift.String : Any]? = nil)
+  public func setTrack(callback: any nudgecore_v2.CallbackInterface)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class N {
+  public static func i(_ message: Swift.String)
+  public static func d(_ message: Swift.String)
+  public static func e(_ message: Swift.String)
+  public static func start(_ message: Swift.String)
+  @objc deinit
+}
+public protocol NudgeCallback {
+}
+public protocol NudgeGlobalCallback : AnyObject {
+  func onEvent(event: any nudgecore_v2.NudgeCallback)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class NudgeProvider : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var nudge: nudgecore_v2.Nudge?
+  @_Concurrency.MainActor(unsafe) public var plugins: [any nudgecore_v2.NudgeUi]?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public init(nudge: nudgecore_v2.Nudge?, plugins: [any nudgecore_v2.NudgeUi]?)
+  @objc deinit
+}
+public protocol NudgeUiCallback {
+  func onNudgeTriggered(nudgeId: Swift.String?, nudgeType: Swift.String?, nudgeToken: Swift.String?)
+}
+@_hasMissingDesignatedInitializers public class CallbackInterfaceImplementation : nudgecore_v2.CallbackInterface {
+  public func onTrackDataReceived(trackData: Any?, event: Swift.String, rewards: Any?, taskDetails: Any?, frontEndTrace: Swift.String?, eventProperties: [Swift.String : Any]?, destinationRoot: Swift.String?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class InAppMessagesUi : nudgecore_v2.NudgeUi, nudgecore_v2.NudgeGlobalCallback {
+  public var id: Swift.String?
+  public var token: Swift.String?
+  public var type: Swift.Int
+  public func copy(with id: Swift.String?, token: Swift.String?) -> (any nudgecore_v2.NudgeUi)?
+  public func trigger(taskId: Swift.String?, event: Swift.String, campaignDetails: [Swift.String : Any], rewards: [[Swift.String : Any]]?, taskStatus: [Swift.String : Any]?, eventProperties: [Swift.String : Any]?, destinationRoot: Swift.String?)
+  public func getCallback(callback: (any nudgecore_v2.NudgeUiCallback)?)
+  public func onEvent(event: any nudgecore_v2.NudgeCallback)
+  @objc deinit
+}
+public protocol NudgeUi {
+  var id: Swift.String? { get }
+  var token: Swift.String? { get }
+  var type: Swift.Int { get }
+  func copy(with id: Swift.String?, token: Swift.String?) -> (any nudgecore_v2.NudgeUi)?
+  func trigger(taskId: Swift.String?, event: Swift.String, campaignDetails: [Swift.String : Any], rewards: [[Swift.String : Any]]?, taskStatus: [Swift.String : Any]?, eventProperties: [Swift.String : Any]?, destinationRoot: Swift.String?)
+  func getCallback(callback: (any nudgecore_v2.NudgeUiCallback)?)
+}
+public class NudgeInitialise {
+  public init(apiKey: Swift.String?, debugMode: Swift.Bool?, getDeviceInfo: Swift.Bool, getLifecycleInfo: Swift.Bool, typefaces: [Swift.String : UIKit.UIFont]?, themeColors: [Swift.String : Swift.String]?)
+  @objc deinit
+}
+public class NudgeStoriesCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeQuizCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeInAppNudgesCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeInAppMessagesCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeChallengesCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeReferralsCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeLeaderboardCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeInLineWidgetCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeSpinTheWheelCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeSurveyCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeChecklistCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeCoreCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeUICallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeInternalCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}
+public class NudgeNudgesCallback : nudgecore_v2.NudgeCallback {
+  final public let action: Swift.String
+  final public let data: [Swift.String : Any]?
+  public init(action: Swift.String, data: [Swift.String : Any]?)
+  @objc deinit
+}

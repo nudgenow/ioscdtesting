@@ -1,0 +1,11 @@
+framework module nudgecore_v2 {
+  umbrella header "nudgecore_v2.h"
+  export *
+
+  module * { export * }
+}
+
+module nudgecore_v2.Swift {
+  header "nudgecore_v2-Swift.h"
+  requires objc
+}
